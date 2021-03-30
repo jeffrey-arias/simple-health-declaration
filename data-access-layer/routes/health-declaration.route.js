@@ -10,13 +10,14 @@ router.route('/').get((request, response) => {
 router.route('/add').post((request, response)=>{
     const name = request.body.name;
     const surname = request.body.surname;
+    const birthday = request.body.birthday;
     const city = request.body.city;
+    const phone = request.body.phone;
     const email = request.body.email;
-    const phone = request.body.number;
     const temperature = request.body.temperature;
     const attestation = request.body.attestation;
 
-    const newHealthDeclaration = new healthDeclarationModel({name, surname, city, email, phone, temperature, attestation});
+    const newHealthDeclaration = new healthDeclarationModel({name, surname, birthday, city, phone, email, temperature, attestation});
 
     newHealthDeclaration.save()
         .then(healthDeclaration => response.json("A record has been added."))

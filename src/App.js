@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 
 
 // Custom components
@@ -14,12 +14,14 @@ import EditHealthDeclaration from './components/edit-health-declaration.componen
 import HealthDeclarationList from './components/health-declaration-list.component';
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
        <Navbar/>
        <br/>
+       <Switch>
        <Route path ="/" exact component={HealthDeclarationList}/>
        <Route path ="/edit/:id" component={EditHealthDeclaration} />
        <Route path ="/create" component={CreateHealthDeclaration}/>
+       </Switch>
     </Router>
       );
 }

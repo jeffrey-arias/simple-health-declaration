@@ -12,12 +12,12 @@ const healthDeclarationSchema = new schema({
         required: true,
         trim: true
     },
-    city: {
-        type: String,
+    birthday: {
+        type: Date,
         required: true,
         trim: true
     },
-    email: {
+    city: {
         type: String,
         required: true,
         trim: true
@@ -27,13 +27,18 @@ const healthDeclarationSchema = new schema({
         required: true,
         trim: true
     },
+    email: {
+        type: String,
+        required: true,
+        trim: true
+    },
     temperature: {
         type: Number,
         required: true,
         trim: true
     },
     attestation: {
-        type: Boolean,
+        type: String,
         required: true,
         trim: true
     }
