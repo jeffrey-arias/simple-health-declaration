@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/data-access-layer/node_modules
+/presentation-layer/node_modules
 /.pnp
 .pnp.js
 
